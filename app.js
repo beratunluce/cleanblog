@@ -21,6 +21,11 @@ app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.get("/posts/:id", async (req, res) => {
+	const posts = await Post.findById(req.params.id);
+	res.render("post", {posts});
+});
+
 app.get("/about", (req, res) => {
 	res.render("about");
 });
@@ -41,8 +46,6 @@ app.get("/", (req, res) => {
 
 app.post("/posts", async (req, res) => {
 	await Post.create(req.body);
-
-	res.redirect("/index");
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));

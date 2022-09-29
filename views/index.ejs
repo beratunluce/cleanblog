@@ -22,9 +22,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+      <% for(let i = 0; i < posts.length; i++){ %> 
         <div class="post-preview">
-          <% for(let i = 0; i < posts.length; i++){ %> 
-          <a href="post.ejs">
+          
+          <a href="/posts/<%= posts[i]._id %>">
             <h2 class="post-title">
               <%= posts[i].title %> 
             </h2>
@@ -33,7 +34,7 @@
             </h3>
           </a>
           <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
+            <a href="#">Admin</a>
             on <%= posts[i].dateCreated %></p>
         </div>
         <hr>
