@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1> <%=posts.title %></h1>
+            <h1><%=posts.title %> </h1>
             
             <span class="meta">Posted by
               <a href="#">Start Bootstrap</a>
@@ -34,7 +34,8 @@
       </div>
     </div>
   </article>
-
+  <a href="/posts/<%= posts._id %>?_method=DELETE" class="btn btn-primary " >Remove</a> 
+  <a class="btn btn-primary" href="/posts/edit/<%= posts._id %>">Edit </a>
   <hr>
 
   <%- include ('E:/WebProjects/nodejs/cleanblog/partials/_nav.ejs') -%>
